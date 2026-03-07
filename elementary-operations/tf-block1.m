@@ -1,0 +1,9 @@
+g1=tf([1],[1 1]);
+g2=tf([1],[1 2]);
+h1=tf([1],[1 3]);   
+h2=tf([1],[1 4]);
+h3=tf([1],[1 5]);   
+a=feedback(g1,h1);
+b=feedback(g2,h2);
+c=series(a,b);
+d=parallel(c,h3)

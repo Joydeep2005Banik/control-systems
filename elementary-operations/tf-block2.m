@@ -1,0 +1,12 @@
+G1=tf([1],[1 1]);
+G2=tf([1],[1 2]);
+G3=tf([1],[1 3]);
+H1=tf([1],[1 4]);   
+H2=tf([1],[1 5]);
+H3=tf([1],[1 6]);
+g1=feedback(G2,H2,-1);
+h3=series(G3,H3);
+g2=feedback(g1,h3,-1);
+g3=series(G1,g2);
+g4=feedback(g3,H1,-1);
+g5=series(g4,G3)
